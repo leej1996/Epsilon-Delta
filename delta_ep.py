@@ -21,7 +21,6 @@ class Linear:
 
     def multiply(self):
         l = self.no_x.split('*')
-
         answer = int(l[0]) * int(l[1])
         self.answer = answer
         self.coefficient = l[0]
@@ -33,7 +32,6 @@ class Linear:
         x = split_x[1]
         c = int(splits[1]) / int(self.coefficient)
         self.factored = '{0} * ({1} - {2})'.format(self.coefficient, x, str(int(c)))
-
 class Quadratic:
     def __init__(self, limit, equation):
         """Precondition: equation is a str in form n ** x,
@@ -54,30 +52,42 @@ class Quadratic:
 
 
 if __name__ == '__main__':
+    print('Multiplication symbol must be expressed with a *, ** for powers')
+    print('Quadratics must be written in from x**n, where n is an integer')
+    print('Linear equations must be written in form n*x, where n is an integer')
+    print('=================================================================')
     limit = str(input('What does x go to?: '))
     equation  = input('What is the equation?: ')
+    print('=================================================================')
     if '**' in equation:
         b = Quadratic(limit, equation)
         b.multiply()
         b.factor()
+        print ('Specific Definition:')
         print (str(b))
+        print('=================================================================')
         print ('Scratch:')
         print ('\tTo set a bound on x, notice that |{0} - {1}| = {2}'.format(b.fx,b.goesto, b.factored))
         print ('\tTake d = 1')
         print ('\t{0}|x - {1}|'.format(b.bound, b.goesto))
         print ('\tThen we can choose d = e/{0}'.format(b.bound))
+        print('=================================================================')
         print ('Proof:')
         print ('Choose d = min(1, e/{0})'.format(b.bound))
         print ('\t|{0} - {1}| = {2}'.format(b.fx, b.answer, b.factored))
         print ('\t           <= {0} * |x - {1}| <= {0}(e/{0}) = e'.format(b.bound, b.goesto))
+        print ('QED')
     else:
         a = Linear(limit, equation)
         a.plug_in()
         a.multiply()
         a.factor()
+        print ('Specific Definition:')
         print (str(a))
+        print('=================================================================')
         print ('Proof:')
         print ('choose d = e/{0}'.format(a.coefficient))
         print ('\t 0 < |x - {0}| < d'.format(a.goesto))
         print ('\t 0 < |x - {0}| < e/{1}'.format(a.goesto, a.coefficient))
         print ('\t |{0} - {1}| < e'.format(a.fx, a.answer))
+        print ('QED')
