@@ -37,6 +37,7 @@ class Quadratic:
         """Precondition: equation is a str in form n ** x,
          where x is a variable and n is an int"""
         self.goesto = limit
+        self.answer = int(self.goesto) ** 2
         self.fx = equation
     def __str__(self):
         return 'For all e > 0, there exists d > 0 : 0 < |x - {0}| < d -> |{1} - {2}| < e'.format(self.goesto, self.fx, self.answer)
@@ -67,7 +68,7 @@ if __name__ == '__main__':
         print (str(b))
         print('=================================================================')
         print ('Scratch:')
-        print ('\tTo set a bound on x, notice that |{0} - {1}| = {2}'.format(b.fx,b.goesto, b.factored))
+        print ('\tTo set a bound on x, notice that |{0} - {1}| = {2}'.format(b.fx,str(b.answer), b.factored))
         print ('\tTake d = 1')
         print ('\t{0}|x - {1}|'.format(b.bound, b.goesto))
         print ('\tThen we can choose d = e/{0}'.format(b.bound))
