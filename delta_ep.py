@@ -58,7 +58,7 @@ class Linear:
         factored += divide_by + '('
         for n in self.to_factor:
             if n.isdigit():
-                x = str(int(int(n)/int(divide_by)))
+                x = str((int(n)/int(divide_by)))
 
                 if x == '1':
                     factored += ''
