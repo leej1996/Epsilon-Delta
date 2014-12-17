@@ -1,4 +1,5 @@
 import delta_ep
+
 def main():
     print('Multiplication symbol must be expressed with a *, ** for powers')
     print('Quadratics must be written in from x**n, where n is an integer')
