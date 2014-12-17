@@ -74,20 +74,41 @@ class Quadratic:
     def __init__(self, limit, equation):
         """Precondition: equation is a str in form n ** x,
          where x is a variable and n is an int"""
-        self.goesto = limit
-        self.answer = int(self.goesto) ** 2
+        self.limit = limit
         self.fx = equation
+        #to find exponent
+        #do I even need this?
+        self.exponent = int(self.fx.split('**')[1][0])
+
+        #finding answer by replacing x w/ limit then evaluating.
+        no_x_equation = ''
+        for x in self.fx:
+            if x == 'x':
+                no_x_equation += str(self.limit)
+            else:
+                no_x_equation += x
+        self.answer = eval(no_x_equation)
+
     def __str__(self):
-        return 'For all e > 0, there exists d > 0 : 0 < |x - {0}| < d -> |{1} - {2}| < e'.format(self.goesto, self.fx, self.answer)
-    def multiply(self):
-        answer = int(self.goesto) ** 2
-        self.answer = answer
+        return 'For all e > 0, there exists d > 0 : 0 < |x - {0}| < d -> |{1} - {2}| < e'.format(self.limit, self.fx, self.answer)
         #self.coefficient = 1
     def factor(self):
         a = '{0} - {1}'.format(self.fx, str(self.answer))
+        to_factor = '0'
+        i = 0
+        #find a way to do this
+        while i != (len(a)) and (a[i] != '*' and a[i] != 'x'):
+            print(a[i])
+            to_factor += a[i]
+            i += 1
+        print(to_factor)
+        #x_minus = eval(to_factor[1:])
+        #print(x_minus)
+
+        a = '{0} - {1}'.format(self.fx, str(self.answer))
         splits = a.split(' - ')
-        self.factored = '|x + {0}| * |x - {0}|'.format(self.goesto)
-        self.bound = 2*int(self.goesto) + 1
+        self.factored = '|x + {0}| * |x - {0}|'.format(self.limit)
+        self.bound = 2*int(self.limit) + 1
 
 if __name__ == '__main__':
     import doctest
