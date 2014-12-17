@@ -92,7 +92,6 @@ class Quadratic:
 
     def __str__(self):
         return 'For all e > 0, there exists d > 0 : 0 < |x - {0}| < d -> |{1} - {2}| < e'.format(self.limit, self.fx, self.answer)
-        #self.coefficient = 1
 
     def factor(self):
         if '-' in self.fx:
