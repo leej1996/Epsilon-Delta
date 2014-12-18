@@ -1,5 +1,9 @@
+-------------
+&epsilon;-&delta; Proofs!
+-------------
 Epsilon-Delta
 =============
+
 
 Allows you to do basic epsilon delta proofs.
 For a description on notation and what epsilon delta proofs, I recommend reading chapters 1 and 2 of these [notes]
@@ -13,4 +17,3 @@ Enjoy!
 
 ==============
 
-Everything in this repo is free for all to use, however they want.
