@@ -97,18 +97,16 @@ class Quadratic:
         if '-' in self.fx:
             no_minus = self.fx.split('-')
             print(no_minus)
-            subtract = '{0}-{1}'.format(no_minus[-1], self.answer)
+            subtract = '0-{0}-{1}'.format(no_minus[-1], self.answer)
             x_minus = eval(subtract)
         else:
             no_plus = self.fx.split('+')
             print(no_plus)
             subtract = '{0}-{1}'.format(no_plus[-1], self.answer)
             x_minus = eval(subtract)
-        print(x_minus)
-
-        a = '{0} - {1}'.format(self.fx, str(self.answer))
-        splits = a.split(' - ')
+        self.to_factor = x_minus
         self.factored = '|x + {0}| * |x - {0}|'.format(self.limit)
+        self.xbound = 1 + int(self.limit)
         self.bound = 2*int(self.limit) + 1
         self.delta = 'e/{0}'.format(self.bound)
 
