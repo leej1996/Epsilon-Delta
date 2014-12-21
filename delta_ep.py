@@ -95,16 +95,20 @@ class Quadratic:
 
     def factor(self):
         if '-' in self.fx:
-            no_minus = self.fx.split('-')
-            print(no_minus)
-            subtract = '0-{0}-{1}'.format(no_minus[-1], self.answer)
+            self.no_plus_minus = self.fx.split('-')
+            if self.fx[0].isnumeric():
+                self.multiplier = int(self.fx[0])
+            subtract = '0-{0}-{1}'.format(self.no_plus_minus[-1], self.answer)
             x_minus = eval(subtract)
         elif '+' in self.fx:
-            no_plus = self.fx.split('+')
-            print(no_plus)
-            subtract = '{0}-{1}'.format(no_plus[-1], self.answer)
+            self.plus_minus= self.fx.split('+')
+            if self.fx[0].isnumeric():
+                self.multiplier = int(self.fx[0])
+            subtract = '{0}-{1}'.format(self.plus_minus[-1], self.answer)
             x_minus = eval(subtract)
         else:
+            if self.fx[0].isnumeric():
+                self.multiplier = int(self.fx[0])
             x_minus = -1 * self.answer
         self.to_factor = x_minus
         self.factored = '|x + {0}| * |x - {0}|'.format(self.limit)

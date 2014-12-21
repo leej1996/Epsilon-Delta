@@ -19,8 +19,12 @@ def main():
             print (str(b))
             print('=================================================================')
             print ('Scratch:')
-            print ('\tTo set a bound on x, notice that |{0} - {1}| = |x**{2} {3}|={4}'.format(b.fx,str(b.answer), str(b.exponent), str(b.to_factor), b.factored))
-            print ('\tTake d = 1')
+            if b.fx[0].isdigit():
+                print('\tTo set a bound on x, notice that |{0} - {1}| = |{2}*x**{3} {4}| = |{2}*(x**{3} - {5})| '.format(b.fx, str(b.answer), b.multiplier, b.exponent, b.to_factor, str(abs(int(b.to_factor)/int(b.multiplier)))))
+                print('\t\t\t\t\t\t\t = |{0}*({1})'.format(b.multiplier, b.factored))
+            else:
+                print('\tTo set a bound on x, notice that |{0} - {1}| = |x**{2} {3}|={4}'.format(b.fx,str(b.answer), str(b.exponent), str(b.to_factor), b.factored))
+            print ('\tAssume d = 1')
             print ('\tThen |x - {0}| < d = 1'.format(b.limit))
             print ('\tThen |x - {0}| < 1'.format(b.limit))
             print ('\tThen -1 + {0} < x < 1 + {0}'.format(b.limit))
