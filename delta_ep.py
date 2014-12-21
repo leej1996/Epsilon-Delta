@@ -36,7 +36,7 @@ class Linear:
 
 
     def __str__(self):
-        return 'For all e > 0, there exists d > 0 : 0 < |x - {0}| < d -> |{1} - {2}| < e'.format(self.limit, self.fx, self.answer)
+        return ' ∀ ε > 0,  ∃ 𝛿 > 0 : 0 < |x - {0}| < 𝛿 -> |{1} - {2}| < ε'.format(self.limit, self.fx, self.answer)
 
     def make_factor(self):
         w = '{0} - {1}'.format(self.fx, self.answer)
@@ -91,7 +91,7 @@ class Quadratic:
         self.factor()
 
     def __str__(self):
-        return 'For all e > 0, there exists d > 0 : 0 < |x - {0}| < d -> |{1} - {2}| < e'.format(self.limit, self.fx, self.answer)
+        return ' ∀ ε > 0,  ∃ 𝛿 > 0 : 0 < |x - {0}| < 𝛿 -> |{1} - {2}| < e'.format(self.limit, self.fx, self.answer)
 
     def factor(self):
         if '-' in self.fx:
@@ -99,7 +99,7 @@ class Quadratic:
             if self.fx[0].isnumeric():
                 self.multiplier = int(self.fx[0])
             subtract = '0-{0}-{1}'.format(self.no_plus_minus[-1], self.answer)
-            x_minus = eval(subtract)
+            x_minus = εval(subtract)
         elif '+' in self.fx:
             self.plus_minus= self.fx.split('+')
             if self.fx[0].isnumeric():
