@@ -27,9 +27,9 @@ class Linear:
         self.make_factor()
         self.factor()
         if self.factored[0].isdigit():
-            self.delta = 'e/{0}'.format(self.factored[0])
+            self.delta = 'ε/{0}'.format(self.factored[0])
         else:
-            self.delta = 'e'
+            self.delta = 'ε'
 
         #self.delta = 'e/{0}'.format(self.factored[0])
 
