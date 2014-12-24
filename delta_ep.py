@@ -70,6 +70,7 @@ class Linear:
         self.factored = q.replace('*', '')
 
 
+
 class Quadratic:
     def __init__(self, limit, equation):
         """Precondition: equation is a str in form n ** x,

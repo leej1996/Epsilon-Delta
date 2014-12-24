@@ -10,7 +10,7 @@ class View(flask.views.MethodView):
         return flask.render_template('index.html')
 
     def post(self):
-        limit =  eval(flask.request.form['expression'])
+        limit =  eval(flask.request.form['limit'])
         return self.get()
 
 app.add_url_rule('/', view_func=View.as_view('main'), methods=['GET', 'POST'])
