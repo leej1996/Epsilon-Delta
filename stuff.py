@@ -1,20 +1,18 @@
-import flask, flask.views
-import run_delta_ep
-import delta_ep
+from flask import Flask
 
-app = flask.Flask(__name__)
-app.secret_key = "delta"
+app = Flask(__name__)
+#================================
+from flask import render_template, request
+from run_delta_ep import proof
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-class View(flask.views.MethodView):
-    def get(self):
-        return flask.render_template('index.html')
+@app.route('/quiz_answers', methods=['POST'])
+def quiz_answers():
+    q1 = request.form['limit']
+    q2 = request.form['fx']
 
-    def post(self):
-        limit =  eval(flask.request.form['limit'])
-        return self.get()
-
-app.add_url_rule('/', view_func=View.as_view('main'), methods=['GET', 'POST'])
-
-
-app.debug = True
-app.run()
+    return proof(q1, q2)
+if __name__ == "__main__":
+    app.run(debug=True)
