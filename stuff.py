@@ -12,7 +12,7 @@ def index():
 def quiz_answers():
     q1 = request.form['limit']
     q2 = request.form['fx']
-
-    return proof(q1, q2)
+    w = proof(q1, q2)
+    return w[4]
 if __name__ == "__main__":
     app.run(debug=True)
