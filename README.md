@@ -3,7 +3,7 @@
 -------------
 Epsilon-Delta
 =============
-
+Website coming soon!!
 
 Allows you to do basic epsilon delta proofs.
 For a description on notation and what epsilon delta proofs, I recommend reading chapters 1 and 2 of these [notes]
@@ -16,4 +16,3 @@ Coming soon are proofs w/ all real numbers and trig functions! yay!
 Enjoy!
 
 ==============
-
