@@ -18,51 +18,26 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<!--[if lte IE 8]><script src="static/ie/html5shiv.js"></script><![endif]-->
-		<script src="templates/js/jquery.min.js"></script>
-		<script src="templates/js/jquery.dropotron.min.js"></script>
-		<script src="templates/js/jquery.scrolly.min.js"></script>
-		<script src="templates/js/jquery.scrollgress.min.js"></script>
-		<script src="templates/js/skel.min.js"></script>
-		<script src="templates/js/skel-layers.min.js"></script>
-		<script src="templates/js/init.js"></script>
+		<script src="static/js/jquery.min.js"></script>
+		<script src="{{ url_for('static', filename='js/jquery.dropotron.min.js') }}"></script>
+		<script src="static/js/jquery.scrolly.min.js"></script>
+		<script src="static/js/jquery.scrollgress.min.js"></script>
+		<script src="static/js/skel.min.js"></script>
+		<script src="static/js/skel-layers.min.js"></script>
+		<script src="static/js/init.js"></script>
 		<noscript>
 
-			<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }} />
+			<link rel="stylesheet" href="{{ url_for('css', filename='style.css') }}" />
 
 		</noscript>
-		<!--[if lte IE 8]><link rel="stylesheet" href="static/ie/v8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="static/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
 	</head>
 	<body class="index">
 
 		<!-- Header -->
 			<header id="header" class="alt">
-				<h1 id="logo"><a href="templates/index.html">Twenty <span>by HTML5 UP</span></a></h1>
-				<nav id="nav">
-					<ul>
-						<li class="current"><a href="templates/index.html">Welcome</a></li>
-						<li class="submenu">
-							<a href="">Layouts</a>
-							<ul>
-								<li><a href="templates/left-sidebar.html">Left Sidebar</a></li>
-								<li><a href="templates/right-sidebar.html">Right Sidebar</a></li>
-								<li><a href="templates/no-sidebar.html">No Sidebar</a></li>
-								<li><a href="templates/contact.html">Contact</a></li>
-								<li class="submenu">
-									<a href="">Submenu</a>
-									<ul>
-										<li><a href="#">Dolore Sed</a></li>
-										<li><a href="#">Consequat</a></li>
-										<li><a href="#">Lorem Magna</a></li>
-										<li><a href="#">Sed Magna</a></li>
-										<li><a href="#">Ipsum Nisl</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li><a href="#" class="button special">Sign Up</a></li>
-					</ul>
-				</nav>
+				<h1 id="logo"><a href="{{ url_for('templates', filename='index.html') }}">&epsilon;-&delta; <span>by Nagee Elghassein</span></a></h1>
 			</header>
 
 		<!-- Banner -->
@@ -77,7 +52,7 @@
 				<div class="inner">
 
 					<header>
-						<h2>TWENTY</h2>
+						<h2>&epsilon;-&delta;</h2>
 					</header>
 					<p>This is <strong>&epsilon;-&delta;</strong>, a proof generator
 					by <a href="https://github.com/isthisnagee" target="_blank">Nagee Elghassein</a>.</p>
@@ -112,21 +87,10 @@
 
 				<!-- One -->
 
-						<footer class="major">
-
-
-						</footer>
-
 
 
 		<!-- CTA -->
-			<section id="cta">
 
-				<footer>
-
-				</footer>
-
-			</section>
 
 		<!-- Footer -->
 			<footer id="footer">
