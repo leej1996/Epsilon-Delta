@@ -1,0 +1,55 @@
+body {
+    background-color: #FFFFFF;
+}
+
+div {
+    
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border: 5px #03A9F4 ;
+     
+    color: #03A9F4;
+}
+
+.mytext {
+    
+    
+    display: block;
+    height: 6ex;
+    width: 75%;  
+    margin: 0 auto;
+    font-size: 3ex;
+    text-align: center;
+}
+
+#intro{
+    background: url(static/images/bg.png);
+    width: 1400px;
+    height: 550px;
+    font-family: sans-serif;
+    font-size: 2em;
+    color: white;
+    margin: 0;
+    padding: 0;
+
+}
+
+.makenice {
+	
+    
+    background: url(static/images/Rounded-Rectangle-1.png);
+    
+    color: #ffffff;
+    font: 400 22px PTSans;
+    
+	padding: 10px 40px;
+	box-shadow: 10px
+    text-align: center;
+	
+}
