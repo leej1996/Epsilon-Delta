@@ -1,16 +1,24 @@
 import delta_ep
 
 def proof(limit, equation):
-    print('=================================================================')
+    e2 = ''
+    for i in range(len(equation) - 1):
+        if equation[i] == '^':
+            e2 += '**'
+        elif equation[i].isdigit() and equation[i+1] == 'x':
+            e2 += '{0}] * {1}'.format(equation[i], equation[i+1])
+        else:
+            e2 += equation[i]
+
     if '**' in equation:
-        b = delta_ep.Quadratic(limit, equation)
+        b = delta_ep.Quadratic(limit, e2)
         if b.fx[0].isdigit():
             ["Specific Definition: ",
+              " ∀ ε > 0,  ∃ 𝛿 > 0 : 0 < |x - {0}| < 𝛿 -> |{1} - {2}| < ε".format(self.limit, self.fx, self.answer),
               "================================================================= ",
               "Scratch: ",
-            #   "To set a bound on x, notice that |{0} - {1}| = |{2}*x**{3} {4}| = |{2}*(x**{3} - {5})| ".format(b.fx,
-            #                str(b.answer), b.multiplier, b.exponent, b.to_factor,
-            #                str(abs(int(b.to_factor)/int(b.multiplier))))
+              '\tTo set a bound on x, notice that |{0} - {1}| = |{2}*x**{3} {4}| = |{2}*(x**{3} - {5})| '.format(b.fx, str(b.answer), b.multiplier, b.exponent, b.to_factor, str(abs(int(b.to_factor)/int(b.multiplier)))),
+              '\t\t\t\t\t\t\t = |{0}*({1})'.format(b.multiplier, b.factored),
               "Assume 𝛿 = 1 ",
               "\tThen |x - {0}| < 𝛿 = 1 ".format(b.limit),
               "\tThen |x - {0}| < 1 ".format(b.limit),
@@ -52,14 +60,16 @@ def proof(limit, equation):
 
     else:
         a = delta_ep.Linear(limit, equation)
-        print ('Specific Definition:')
-        print (str(a))
-        print('=================================================================')
-        print ('Proof:')
-        print ('choose 𝛿 = {0}'.format(a.delta))
-        print ('\t 0 < |x - {0}| < d'.format(a.limit))
-        print ('\t 0 < |x - {0}| < {1}'.format(a.limit, a.delta))
-        print ('\t 0 < |{0}| < ε'.format(a.factored))
-        print ('\t 0 < |{0}| < ε'.format(a.to_factor))
-        print ('\t |({0}) - {1}| < ε'.format(a.fx, a.answer))
-        print ('QED')
+        w= ['Specific Definition:',
+            str(a),
+            '=================================================================',
+            'Proof:',
+            'choose 𝛿 = {0}'.format(a.delta),
+            '\t 0 < |x - {0}| < d'.format(a.limit),
+            '\t 0 < |x - {0}| < {1}'.format(a.limit, a.delta),
+            '\t 0 < |{0}| < ε'.format(a.factored),
+            '\t 0 < |{0}| < ε'.format(a.to_factor),
+            '\t |({0}) - {1}| < ε'.format(a.fx, a.answer),
+            'QED'
+            ]
+        return w

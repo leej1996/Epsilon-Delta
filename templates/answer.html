@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+        <base target="_blank">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <title>&epsilon;-&delta; proofs</title>
+
+
+</head>
+<body>
+    
+    <p>This is your proof!</p>
+    {% for item in request.form['limit']|proofs(request.form['fx']) %}
+     <p id="smaller"> {{ item }} </p> 
+    {% endfor %}
+<div>
+        <ul>
+            <li>
+                <a href="https://twitter.com/isthisnagee"><li><i class="fa fa-twitter"></i></li></a>
+            </li>
+            <li>
+                Made with <a href="http://thenicestplaceontheinter.net/"><img src="../static/css/images/heart.png"></a> by Nagee Elghassein 
+            </li>
+            <li>
+                <a href="https://github.com/isthisnagee"><i class="fa fa-github-alt"></i></a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

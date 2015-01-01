@@ -18,7 +18,7 @@ p{
     width: 100%;
     padding: 10px;
     border: 5px #03A9F4 ;
-     
+
     color: #03A9F4;
 }
 
@@ -36,11 +36,11 @@ h1 {
 }
 
 .mytext {
-    
+
     font-family: consolas;
     display: block;
     height: 6ex;
-    width: 75%;  
+    width: 75%;
     margin: 0 auto;
     font-size: 3ex;
     text-align: center;
@@ -48,11 +48,12 @@ h1 {
 
 .makenice {
     text-align: center;
-    
+
 }
 #between{
     color: #1abc9c;
     line-height: 0%;
+    font-family: consolas;
 
 }
 
@@ -89,12 +90,15 @@ a:active {
 ul
 {
     position:fixed;bottom:0;
-  
+
     width:100%;
     display:block;
     list-style-type: none;
-    
+
 }
 li {
     display: inline;
+}
+smaller {
+    line-height: 40%
 }
