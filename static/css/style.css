@@ -1,14 +1,19 @@
 body {
     background-color: #FFFFFF;
+    font-family: consolas;
 }
 
 div {
-    
+    text-align: center;
     width: 100%;
     margin: 0;
     padding: 0;
 }
+p{
+    font-family: consolas;
+    text-align: center;
 
+}
 .input {
     width: 100%;
     padding: 10px;
@@ -17,9 +22,22 @@ div {
     color: #03A9F4;
 }
 
+h1 {
+    font-family: "arial black";
+    font-size: 3em;
+    color: #1abc9c;
+    line-height: 10%
+}
+    h4{
+    font-family: "arial black";
+    color: #95a5a6;
+    text-align: center;
+    line-height: 10%;
+}
+
 .mytext {
     
-    
+    font-family: consolas;
     display: block;
     height: 6ex;
     width: 75%;  
@@ -28,28 +46,50 @@ div {
     text-align: center;
 }
 
-#intro{
-    background: url(static/images/bg.png);
-    width: 1400px;
-    height: 550px;
-    font-family: sans-serif;
-    font-size: 2em;
-    color: white;
-    margin: 0;
-    padding: 0;
-
+.makenice {
+    text-align: center;
+    
 }
 
-.makenice {
-	
+#boxx {
+    border-style: none;
+    font-family: monospace;
+    height: 2.5em;
+    width: 6em;
+    font-size: 1.5em;
+    color: white;
+    background-color: #e74c3c;
+}
+
+/* unvisited link */
+a:link {
+    color: #3498db;
+}
+
+/* visited link */
+a:visited {
+    color: #34495e;
+}
+
+/* mouse over link */
+a:hover {
+    color: #2ecc71;
+}
+
+/* selected link */
+a:active {
+    color: #9b59b6;
+}
+
+ul
+{
+    position:fixed;bottom:0;
+  
+    width:100%;
+    display:block;
+    list-style-type: none;
     
-    background: url(static/images/Rounded-Rectangle-1.png);
-    
-    color: #ffffff;
-    font: 400 22px PTSans;
-    
-	padding: 10px 40px;
-	box-shadow: 10px
-    text-align: center;
-	
+}
+li {
+    display: inline;
 }

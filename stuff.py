@@ -10,6 +10,7 @@ def index():
 
 @app.route('/answer', methods=['POST'])
 def answer():
+    render_template('index.html')
     q1 = request.form['limit']
     q2 = request.form['fx']
     w = proof(q1, q2)
