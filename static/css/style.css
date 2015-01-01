@@ -50,6 +50,11 @@ h1 {
     text-align: center;
     
 }
+#between{
+    color: #1abc9c;
+    line-height: 0%;
+
+}
 
 #boxx {
     border-style: none;
