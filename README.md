@@ -1,5 +1,5 @@
 -------------
-&epsilon;-&delta; Proofs!
+<p align="center">![alt tag](https://github.com/isthisnagee/Epsilon-Delta/blob/master/static/css/images/ed.png)<p>
 -------------
 Epsilon-Delta
 =============
