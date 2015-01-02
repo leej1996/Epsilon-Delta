@@ -3,7 +3,7 @@
 -------------
 Epsilon-Delta
 =============
-<strike>Website coming soon!!</strike> [Webiste is up](http://isthisnagee.pythonanywhere.com/)
+<strike>Website coming soon!!</strike> [Website is up](http://isthisnagee.pythonanywhere.com/)
 
 Allows you to do basic epsilon delta proofs.
 For a description on notation and what epsilon delta proofs, I recommend reading chapters 1 and 2 of these [notes]
