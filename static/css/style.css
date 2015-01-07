@@ -14,12 +14,53 @@ p{
     text-align: center;
 
 }
+
+.pls{
+    width: 45%;
+    text-align: right;
+
+
+}
+w {
+    font-family: monospace;
+    font-size: 4em;
+    align-content: center;
+
+}
+
+#fx {
+    width: 25%;
+    position: inherit;
+    border: none;
+    outline: none;
+    font-size: 2em;
+    font-family: monospace;
+}
+
+x {
+    font-family: monospace;
+    font-size: 1.5em;
+
+}
+r{
+    width: 300px;
+    background-color: yellow;
+
+}
+#limit {
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-family: monospace;
+    text-align: center;
+    width: 69px
+}
 .input {
     width: 100%;
     padding: 10px;
-    border: 5px #03A9F4 ;
-
+    border: 0;
     color: #03A9F4;
+    box-shadow: none;
 }
 
 h1 {
@@ -53,7 +94,7 @@ h1 {
 #between{
     color: #1abc9c;
     line-height: 0%;
-    font-family: consolas;
+    font-family:consolas;
 
 }
 
@@ -89,10 +130,9 @@ a:active {
 
 ul
 {
-    position:fixed;bottom:0;
-
-    width:100%;
-    display:block;
+    position:absolute;
+    bottom:0;
+    right:0;
     list-style-type: none;
 
 }

@@ -23,6 +23,9 @@ def answer():
     q2 = request.form['fx']
     return render_template('answer.html')
 
+@app.errorhandler(500)
+def page_not_found():
+    return render_template('500.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

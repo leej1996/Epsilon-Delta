@@ -20,22 +20,28 @@
     <p>If you are not familiar with mathematical logic and its notation,  or mathematical proofs, click <a href="http://www.math.toronto.edu/tholden/LectureNotes137_Preview.pdf" target="_blank">here!</a> </p>
     <p>Read <strong>Chapter 1</strong> to get used to the notation and general logic, and how to write a proof. Read <strong>Chapter 2</strong> for limits and &epsilon;-&delta; proofs.
     </div>
-    
+    <!-- -->
     <form action="/answer" method="POST">
-        <div class="input">      
-            <input onClick="this.setSelectionRange(0, this.value.length)"type="text"
-            name="limit" placeholder="x goes to what number?"
-            class="mytext">
-                <br>
-            <input onClick="this.setSelectionRange(0, this.value.length)"
-            type="text" name="fx" placeholder="Enter an equation in terms of x"
-            class="mytext"><br>
+    <div><w>Lim </w>
+       <input onClick="this.setSelectionRange(0, this.value.length)"
+            type="text" name="fx" placeholder="equation"
+            id="fx">
+       </div>
+       <div>
+        <div class="pls">
+       <x>x &#8594; <input onClick="this.setSelectionRange(0, this.value.length)"type="text"
+            name="limit" placeholder="number"
+            id="limit"></x>
         </div>
-        
-        <div class="makenice">
+       </div>
+    <div class="makenice">
             <input  type="submit" value="Prove!" id="boxx"/>
         </div>  
     </form>
+    <!-- -->
+
+        
+        
     <div>
         <ul>
             <li>
