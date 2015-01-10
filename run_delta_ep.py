@@ -6,19 +6,20 @@ def proof(limit, equation):
         if equation[i] == '^':
             e2 += '**'
         elif equation[i].isdigit() and equation[i+1] == 'x':
-            e2 += '{0}] * {1}'.format(equation[i], equation[i+1])
+            e2 += '{0}*'.format(equation[i])
         else:
             e2 += equation[i]
+    e2 += equation[-1]
 
-    if '**' in equation:
+    if '^' in equation or '**' in equation:
         b = delta_ep.Quadratic(limit, e2)
         if b.fx[0].isdigit():
-            ["Specific Definition: ",
-              " ∀ ε > 0,  ∃ 𝛿 > 0 : 0 < |x - {0}| < 𝛿 -> |{1} - {2}| < ε".format(self.limit, self.fx, self.answer),
+            w = ["Specific Definition: ",
+              " ∀ ε > 0,  ∃ 𝛿 > 0 : 0 < |x - {0}| < 𝛿 -> |{1} - {2}| < ε".format(b.limit, b.fx, b.answer),
               "================================================================= ",
               "Scratch: ",
               '\tTo set a bound on x, notice that |{0} - {1}| = |{2}*x**{3} {4}| = |{2}*(x**{3} - {5})| '.format(b.fx, str(b.answer), b.multiplier, b.exponent, b.to_factor, str(abs(int(b.to_factor)/int(b.multiplier)))),
-              '\t\t\t\t\t\t\t = |{0}*({1})'.format(b.multiplier, b.factored),
+              '\t\t\t\t\t\t\t = |{0}*({1})|'.format(b.multiplier, b.factored),
               "Assume 𝛿 = 1 ",
               "\tThen |x - {0}| < 𝛿 = 1 ".format(b.limit),
               "\tThen |x - {0}| < 1 ".format(b.limit),
@@ -34,10 +35,10 @@ def proof(limit, equation):
                         str(b.exponent), str(b.to_factor), b.factored),
               "\t    <= {0} * |x - {1}| <= {0}(ε/{0}) = ε ".format(b.bound, b.limit),
               "QED "
-
               ]
         else:
             w =["Specific Definition: ",
+              " ∀ ε > 0,  ∃ 𝛿 > 0 : 0 < |x - {0}| < 𝛿 -> |{1} - {2}| < ε".format(b.limit, b.fx, b.answer),
               "================================================================= ",
               "Scratch: ",
               '\tTo set a bound on x, notice that |{0} - {1}| = |x**{2} {3}|={4}'.format(b.fx,str(b.answer), str(b.exponent), str(b.to_factor), b.factored),
@@ -59,9 +60,9 @@ def proof(limit, equation):
 
 
     else:
-        a = delta_ep.Linear(limit, equation)
+        a = delta_ep.Linear(limit, e2)
         w= ['Specific Definition:',
-            str(a),
+            ' ∀ ε > 0,  ∃ 𝛿 > 0 : 0 < |x - {0}| < 𝛿 -> |{1} - {2}| < ε'.format(a.limit, a.fx, a.answer),
             '=================================================================',
             'Proof:',
             'choose 𝛿 = {0}'.format(a.delta),
