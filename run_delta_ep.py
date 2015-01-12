@@ -61,7 +61,7 @@ def proof(limit, equation):
 
     else:
         a = delta_ep.Linear(limit, e2)
-        w= ['Specific Definition:',
+        w = ['Specific Definition:',
             ' ∀ ε > 0,  ∃ 𝛿 > 0 : 0 < |x - {0}| < 𝛿 -> |{1} - {2}| < ε'.format(a.limit, a.fx, a.answer),
             '=================================================================',
             'Proof:',
