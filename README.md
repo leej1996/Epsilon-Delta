@@ -14,6 +14,6 @@ Coming soon are proofs with all real numbers and trig functions! yay!
 
 
 Enjoy!
-<p align="center" sytle="font-family:consolas">For you, with ![alt tag](https://github.com/isthisnagee/Epsilon-Delta/blob/master/static/css/images/heart.png)<p>
+<p align="center" sytle="font-family:consolas">For students, with ![alt tag](https://github.com/isthisnagee/Epsilon-Delta/blob/master/static/css/images/heart.png)<p>
 
 ==============
