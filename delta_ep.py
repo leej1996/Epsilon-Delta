@@ -2,21 +2,10 @@
 class Linear:
 	#class for linear functions
     def __init__(self, limit, equation):
-        """(int, str) -> Linear
-
-        >>> l = Linear(4, '2*x')
-        >>> l.limit
-        4
-        >>> l.fx
-        '2*x'
-        >>> l.answer
-        8
-        """
 		#set the limit to the value defined by the constructor
         self.limit = limit
 		#set the fx (f(x)), to the given equation from the constructor
         self.fx = equation
-
 		#set answer to a null string
         answer = ''
 		#for loop to go through whole equation
