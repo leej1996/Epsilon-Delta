@@ -1,18 +1,27 @@
 import delta_ep
 
+#main function
 def proof(limit, equation):
     e2 = ''
+	#iterate through whole equation
     for i in range(len(equation) - 1):
+		#if there is an exponent, add to e2 **
         if equation[i] == '^':
             e2 += '**'
+		#if there is a number and the next symbol is multiplication symbol, add to e2 the number and then the * symbol
         elif equation[i].isdigit() and equation[i+1] == 'x':
             e2 += '{0}*'.format(equation[i])
         else:
+		#else just add to e2 the number
             e2 += equation[i]
+	#add the last part of the equation to e2
     e2 += equation[-1]
 
+	#if there is an exponent in the equation
     if '^' in equation or '**' in equation:
+		#find the delta epsilon of e2 (use quadratic as its a quadratic function)
         b = delta_ep.Quadratic(limit, e2)
+		#display the proof if the first digit of the function is a digit
         if b.fx[0].isdigit():
             w = ["Specific Definition: ",
               " ∀ ε > 0,  ∃ 𝛿 > 0 : 0 < |x - {0}| < 𝛿 -> |{1} - {2}| < ε".format(b.limit, b.fx, b.answer),
@@ -60,6 +69,7 @@ def proof(limit, equation):
 
 
     else:
+	#find the delta epsilon of e2 (use linear as its a linear equation)
         a = delta_ep.Linear(limit, e2)
         w = ['Specific Definition:',
             ' ∀ ε > 0,  ∃ 𝛿 > 0 : 0 < |x - {0}| < 𝛿 -> |{1} - {2}| < ε'.format(a.limit, a.fx, a.answer),
